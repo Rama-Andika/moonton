@@ -15,31 +15,25 @@ use Inertia\Inertia;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('admin', function () {
+// Route::get('admin', function () {
     
-})->middleware('role:admin');
+// })->middleware('role:admin');
 
-Route::get('user', function () {
+// Route::get('user', function () {
     
-})->middleware('role:user');
+// })->middleware('role:user');
 
-Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
+Route::redirect('/', '/prototype/login');
+
+Route::prefix('prototype')->group(function(){
+    route::get('/login', function () {
+        return Inertia::render('Prototype/Login');
+    });
 });
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
 
 require __DIR__.'/auth.php';
