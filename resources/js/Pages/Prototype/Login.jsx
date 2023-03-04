@@ -1,4 +1,4 @@
-import PrimaryButton from "@/Components/PrimaryButton";
+import PrimaryButton from "@/Components/Button";
 import TextInput from "@/Components/TextInput";
 import { Head, Link } from "@inertiajs/inertia-react";
 import InputLabel from "../../Components/InputLabel";
@@ -54,7 +54,7 @@ const Login = () => {
                                     </div>
                                 </div>
                                 <div className="grid space-y-[14px] mt-[30px]">
-                                    <Link href={route('prototype.dashboard')} >
+                                    <Link href={route("prototype.dashboard")}>
                                         <PrimaryButton
                                             type="button"
                                             variant="primary"

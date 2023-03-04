@@ -1,3 +1,4 @@
+import { Link } from "@inertiajs/inertia-react";
 import PropTypes from "prop-types";
 
 FeatureMovie.propTypes = {
@@ -43,11 +44,11 @@ export default function FeatureMovie({
                         {category}
                     </p>
                 </div>
-                <a href={slug} >
+                <Link href={route('prototype.movie.show', slug)} >
                     <div className="translate-x-[100px] group-hover:translate-x-0 transition ease-in-out duration-500">
                         <img src="/icons/ic_play.svg" width="50" alt="" />
                     </div>
-                </a>
+                </Link>
             </div>
         </div>
     );

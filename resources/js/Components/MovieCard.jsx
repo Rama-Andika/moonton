@@ -1,11 +1,12 @@
+import { Link } from "@inertiajs/inertia-react";
 
 
 const MovieCard = ({ slug, img, name, category }) => {
     return (
-        <div className="relative group overflow-hidden pr-[10px]  ">
+        <div className="relative group overflow-hidden pr-[20px] ">
             <img
                 src={img}
-                className="object-cover rounded-[30px] h-[340px]  "
+                className="object-cover rounded-[30px] h-[340px] w-[250px]"
                 alt=""
             />
             <div className="absolute bottom-0 left-0 right-0  from-black rounded-bl-[28px] rounded-br-[28px]">
@@ -16,7 +17,7 @@ const MovieCard = ({ slug, img, name, category }) => {
                     </p>
                 </div>
             </div>
-            <a href={slug}>
+            <Link href={route('prototype.movie.show', slug)}>
                 <div
                     className="absolute top-1/2 left-1/2 -translate-y-[500px] group-hover:-translate-y-1/2
                                 -translate-x-1/2 z-20 transition ease-in-out duration-500"
@@ -28,7 +29,7 @@ const MovieCard = ({ slug, img, name, category }) => {
                         alt=""
                     />
                 </div>
-            </a>
+            </Link>
         </div>
     );
 };

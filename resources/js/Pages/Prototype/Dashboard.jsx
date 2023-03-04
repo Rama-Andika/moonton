@@ -20,12 +20,13 @@ const Dashboard = () => {
     // }
 
     const settings = {
+        className: "slider variable-width",
         dots: false,
-        infinite: false,
-        speed: 500,
-        slidesToShow: 4,
-        slidesToScroll: 4,
-        initialSlide: 0,
+        infinite: true,
+        centerMode: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        variableWidth: true,
         responsive: [
             {
                 breakpoint: 1024,
@@ -90,14 +91,21 @@ const Dashboard = () => {
                 <div className="font-semibold text-[22px] text-black mb-4 mt-10">
                     Browse
                 </div>
-                <Slider {...settings}>
-                    {Array.from({ length: 6 }, (x, i) => i).map((index) => (
-                        <MovieCard key={index} slug="cat" img="/images/browse-1.png" name="Cat" category="Family" />
-                    ))}
-                </Slider>
+                <div>
+                    <Slider {...settings}>
+                        {Array.from({ length: 10 }, (x, i) => i).map((index) => (
+                            <MovieCard
+                                key={index}
+                                slug="cat"
+                                img="/images/browse-1.png"
+                                name={"Cat-"+(index+1)}
+                                category="Family"
+                            />
+                        ))}
+                    </Slider>
+                </div>
             </div>
             {/* End Browse */}
-
         </AuthenticatedLayout>
     );
 };

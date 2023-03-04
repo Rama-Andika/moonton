@@ -1,4 +1,4 @@
-import PrimaryButton from "@/Components/PrimaryButton";
+import PrimaryButton from "@/Components/Button";
 import TextInput from "@/Components/TextInput";
 import { Link, Head } from "@inertiajs/inertia-react";
 import InputLabel from "../../Components/InputLabel";
@@ -67,7 +67,7 @@ const Register = () => {
                                 </div>
                             </div>
                             <div className="grid space-y-[14px] mt-[30px]">
-                                <Link href={route('prototype.dashboard')}>
+                                <Link href={route("prototype.dashboard")}>
                                     <PrimaryButton type="button">
                                         <span className="text-base font-semibold">
                                             Sign Up
